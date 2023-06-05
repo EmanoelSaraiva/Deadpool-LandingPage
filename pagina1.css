@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  font-family: "Barlow Condensed", sans-serif;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  background-color: #e12835;
+  background-image: radial-gradient(
+    #e12835 20%,
+    #e12835 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  background-size: 120%;
+  background-position: center;
+  font-family: "Barlow Condensed", sans-serif;
+  animation: tighten-vinette ease-out 2000ms forwards;
+}
+
+.dataLancamento{
+  color: #fff;
+}
+
+.images {
+  pointer-events: none;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0.6;
+  z-index: 20;
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  background-image: url("https://static.comicvine.com/uploads/original/11124/111240517/4986890-4700382785-29908.jpg");
+}
+.wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  cursor: pointer;
+  text-align: center;
+}
+.logo:hover .restart {
+  opacity: 0.8;
+}
+.restart {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.08rem;
+  transition: opacity 150ms linear;
+}
+.marvel,
+.studios {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.2rem;
+  font-size: 5rem;
+  margin: 0.05rem 0.05rem 0.5rem;
+  padding: 0 0.4rem;
+  display: inline-block;
+}
+.studios {
+  font-weight: 500;
+  letter-spacing: -0.3rem;
+  transform: translateX(-95px);
+}
+.marvel {
+  z-index: 10;
+  font-weight: 800;
+  transform: translateX(95px);
+}
+.marvel:before {
+  z-index: -10;
+  content: "";
+  display: block;
+  background-color: #e12835;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.studios:after,
+.studios:before {
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  background-color: #fff;
+  display: block;
+  left: 0.4rem;
+  right: 0.4rem;
+}
+.studios:before {
+  top: 0;
+}
+.studios:after {
+  bottom: 0;
+}
+.wrapper.run-animation {
+  animation: shrink ease-out 4800ms forwards 600ms;
+}
+.wrapper.run-animation .marvel {
+  transform: translateX(95px);
+  animation: slide-out-X 900ms ease forwards;
+}
+.wrapper.run-animation .studios {
+  transform: translateX(-95px);
+  color: transparent;
+  animation: slide-out-X 900ms ease forwards,
+    show-text 300ms linear forwards 1500ms;
+}
+.wrapper.run-animation .studios:before {
+  transform: translateY(2.9rem);
+  animation: slide-out-Y 500ms ease forwards 750ms;
+}
+.wrapper.run-animation .studios:after {
+  transform: translateY(-2.9rem);
+  animation: slide-out-Y 500ms ease forwards 750ms;
+}
+.wrapper.run-animation .restart {
+  opacity: 0;
+  animation: fade-down 1500ms ease 3600ms forwards;
+}
+.wrapper.run-animation ~ .images {
+  animation: flicker-images 2000ms 2 steps(1, end), fade-out 5500ms forwards;
+}
+
+.btn-principal{
+  display: flex;
+  justify-content: center;
+}
+
+.botoes {
+  width: 150px;
+  height: 50px;
+  background: transparent;
+  position: relative;
+  padding: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(238, 238, 238);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+} 
+
+.botoes::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.botoes:hover {
+  color: #cc0018;
+  border: 1px solid rgb(252, 252, 252);
+}
+
+.botoes:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(255, 255, 255);
+}
+
+
+
+@keyframes slide-out-X {
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-out-Y {
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes show-text {
+  100% {
+    color: #fff;
+  }
+}
+@keyframes shrink {
+  100% {
+    transform: scale(0.8);
+  }
+}
+@keyframes tighten-vinette {
+  100% {
+    background-size: 120%;
+  }
+}
+@keyframes fade-down {
+  0% {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+}
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes flicker-images {
+  0% {
+    background-image: url("https://wallpapercave.com/wp/wp3517910.jpg");
+  }
+  10% {
+    background-image: url("https://images7.alphacoders.com/901/thumb-1920-901925.jpg");
+  }
+  20% {
+    background-image: url("https://www.teahub.io/photos/full/115-1152771_deadpool-movie-deadpool-wallpaper-4k.jpg");
+  }
+  30% {
+    background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/09/deadpool_1536362035.jpg");
+  }
+  40% {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/207/760/989/movie-deadpool-2-deadpool-wallpaper-preview.jpg");
+  }
+  50% {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/73/147/601/movie-deadpool-2-deadpool-wallpaper-preview.jpg");
+  }
+  60% {
+    background-image: url("https://rare-gallery.com/uploads/posts/565929-deadpool-wallpaper.jpg");
+  }
+  70% {
+    background-image: url("https://ogimg.infoglobo.com.br/rioshow/24884446-8f3-e73/FT1086A/760/deadpool-primeiro-filme.jpeg.jpg");
+  }
+  80% {
+    background-image: url("https://www.teahub.io/photos/full/8-83715_deadpool-wallpapers-for-pc.jpg");
+  }
+  90% {
+    background-image: url("https://disneyplusbrasil.com.br/wp-content/uploads/2022/12/Ryan-Reynolds-Deadpool.jpg");
+  }
+  100% {
+    background-image: url("https://pyxis.nymag.com/v1/imgs/c9c/7d7/c664d670e53c6571fe4962edcb5d43c2b3-deadpool.jpg");
+  }
+}

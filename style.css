@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+body {
+    background-color: #1E1E1E;
+}
+
+@font-face {
+    font-family: 'Deadpool Movie';
+    src: url('../fontes/Deadpool_Movie.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cloud {
+    position: absolute;
+    width: 100vw;
+    height: 90.7vh;
+    animation: rotationLeft 25s linear infinite;
+    z-index: -1;
+}
+
+.logoMarvel {
+    display: flex;
+    padding: 20px 20px;
+}
+
+.logoMarvel img {
+    width: 150px;
+    animation: pulseLogo 3s infinite;
+}
+
+.slideUp img{
+    width: 463px;
+}
+
+.slideUp{
+    padding-left: 20px;
+    animation: slideUp 2s ease-in-out;
+}
+
+.imagensDeadpool img:nth-child(2) {
+    width: 463px;
+}
+
+.imagensDeadpool {
+    display: flex;
+    width: 100vw;
+    height: 90.85vh;
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.img_cloud {
+    height: 99.50vh;
+    margin: 0;
+    opacity: 0.5;
+}
+
+.descricao {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    color: #fff;
+    font-size: 20px;
+    width: 900px;
+    text-align: justify;
+    padding-left: 600px;
+    padding-top: 250px;
+}
+
+.logoDeadpool{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    justify-content: end;
+    width: 100vw;
+}
+
+.botoes {
+    width: 200px;
+    height: 50px;
+    background: transparent;
+    position: relative;
+    padding: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    outline: none;
+    overflow: hidden;
+    color: rgb(238, 238, 238);
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+}
+
+.botoes::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    left: -5em;
+    text-align: center;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
+}
+
+.botoes:hover {
+    color: #cc0018;
+    border: 1px solid rgb(252, 252, 252);
+}
+
+.botoes:hover::before {
+    box-shadow: inset 0 0 0 10em rgb(255, 255, 255);
+}
+
+.tituloAnimado {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.tituloAnimado h1 {
+    letter-spacing: 10px;
+    font-family: 'Deadpool Movie', sans-serif;
+    font-size: 110px;
+    color: #fff;
+    z-index: 1;
+    position: absolute;
+    transform: translate(-0%, -50%);
+}
+
+.tituloAnimado h1:nth-child(1){
+    font-weight: 700;
+    
+}
+
+.tituloAnimado h1:nth-child(2){
+    color: #cc0018;
+    font-weight: 700;
+    animation: animate 4s ease-in-out infinite;
+}
+
+/* ModalTrailer */
+
+.modal{
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 2;
+}
+
+.centeudoModalRecado{
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 3%;
+}
+
+.cabecalhoModal{
+    padding: 1px 8px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #D9D9D9;
+    background-color: #cc0018;
+    border-radius: 8px 8px 0 0;
+    color: #ffffff;
+}
+
+.cabecalhoModalFechar{
+    margin-left: 2rem !important;
+}
+
+.cabecalhoModalFechar img{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-top: 2px;
+    filter: invert(1);
+}
+
+.corpoModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.corpoModal button{
+    margin-top: .8rem;
+    margin-bottom: .8rem;
+    background-color: rgba(200, 200, 206, 0.62);
+}
+
+/* Animações */
+
+@keyframes rotationLeft {
+    0% {
+        transform: translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+
+@keyframes pulseLogo {
+    0% {
+        box-shadow: 5px 5px 20px rgb(255, 0, 0);
+    }
+
+    50% {
+        box-shadow: 5px 5px 30px rgba(255, 5, 5, 0.443);
+    }
+
+    100% {
+        box-shadow: 5px 5px 20px rgba(248, 179, 179, 0.8);
+    }
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+      clip-path: polygon(0% 45%,
+          15% 44%,
+          32% 50%,
+          54% 60%,
+          70% 61%,
+          84% 59%,
+          100% 52%,
+          100% 100%,
+          0% 100%);
+    }
+  
+    50% {
+      clip-path: polygon(0 60%,
+          16% 65%,
+          34% 66%,
+          51% 62%,
+          67% 50%,
+          84% 45%,
+          100% 46%,
+          100% 100%,
+          0% 100%);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  }
+  
